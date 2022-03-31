@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="OrdersWPF.View.OrderCreateView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OrdersWPF.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Border CornerRadius="20">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FF0059A2" Offset="0.5"/>
+                    <GradientStop Color="#FF07174D" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Width="500">
+                <DataGrid FontSize="15" Margin="10" Height="420" x:Name="dgOrderCreate" CanUserAddRows="False" CanUserDeleteRows="False" Style="{StaticResource dataGridMain}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding ID_Order}"/>
+                        <DataGridTextColumn Header="Name product" Width="100" Binding="{Binding Name_product}"/>
+                        <DataGridTextColumn Header="Worker's ID" Width="90" Binding="{Binding ID_Worker}"/>
+                        <DataGridTextColumn Header="Tags" Width="250" Binding="{Binding Tags}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Width="300">
+                <TextBlock
+                    Text="Name product"
+                    Foreground="White"
+                    FontSize="20"
+                    HorizontalAlignment="Left"
+                    Margin="10,5,0,10"/>
+                <StackPanel Width="120" HorizontalAlignment="Left" Orientation="Vertical" Margin="10,0,0,0">
+                    <TextBox x:Name="txtNamePro" FontFamily="Helvetica"
+                        FontWeight="Light"
+                        FontSize="16"                            
+                        Foreground="White"
+                        Background="Transparent"                          
+                        Style="{StaticResource ModernTxtOnControl}" Margin="0,0,0,0"    
+                        />
+                    <Border Background="#FF1A6AAC"     
+                        Width="220"
+                        Height="5"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        />
+                </StackPanel>
+
+                <TextBlock
+                    Text="Worker's ID"
+                    Foreground="White"
+                    FontSize="20"
+                    HorizontalAlignment="Left"
+                    Margin="10,5,0,10"/>
+                <StackPanel Width="120" HorizontalAlignment="Left" Orientation="Vertical" Margin="10,0,0,0">
+                    <TextBox x:Name="txtWorkerID" FontFamily="Helvetica"
+                        FontWeight="Light"
+                        FontSize="16"                            
+                        Foreground="White"
+                        Background="Transparent"                          
+                        Style="{StaticResource ModernTxtOnControl}" Margin="0,0,0,0"    
+                        />
+                    <Border Background="#FF1A6AAC"     
+                        Width="220"
+                        Height="5"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        />
+                </StackPanel>
+
+                <TextBlock
+                    Text="Tags"
+                    Foreground="White"
+                    FontSize="20"
+                    HorizontalAlignment="Left"
+                    Margin="10,5,0,10"/>
+                <Border 
+                    Width="142" 
+                    Height="110"
+                    Margin="4,0,0,0"
+                    HorizontalAlignment="Left"
+                    Background="#FF1A6AAC"
+                    CornerRadius="10">
+
+                <StackPanel>
+                        <DataGrid FontSize="13" Margin="5" Width="142" Height="120" x:Name="dgTags" CanUserAddRows="False" CanUserDeleteRows="False" Style="{StaticResource dataGridMain}" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Tag" Width="65" Binding="{Binding _tag}"/>
+                                <DataGridTemplateColumn Header="Is Tagged" Width="65">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox x:Name="chbTag" Margin="20,0,0,0" IsChecked="{Binding _check}" Click="chbTag_Click"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+                <Button x:Name="btnCreate" 
+                    Content="Create" 
+                    HorizontalAlignment="Left" 
+                    Margin="15,20,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="120"
+                    Height="30"
+ 
+                    Style="{StaticResource ModernBasicBtn}" Click="btnCreate_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

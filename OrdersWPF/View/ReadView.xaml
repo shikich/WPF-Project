@@ -1,0 +1,249 @@
+﻿<UserControl x:Class="OrdersWPF.View.ReadView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OrdersWPF.View" xmlns:svgc1="http://sharpvectors.codeplex.com/svgc/"
+             mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="680">
+    <Grid>
+        <Border CornerRadius="20">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FF0059A2" Offset="0.5"/>
+                    <GradientStop Color="#FF07174D" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <StackPanel>
+            <TextBlock Text="WPF Project"
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20"/>
+
+            <StackPanel Orientation="Horizontal"
+                    Margin="0,0,0,10">
+                <Border Width="396"
+                    Height="200">
+
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                            <GradientStop Color="#FF013EA8" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.Clip>
+                        <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,396,200"/>
+                    </Border.Clip>
+                    <Grid>
+                        <StackPanel>
+                            <TextBlock Text="About application&#x0a;"
+                                   Foreground="Black"
+                                   FontSize="28"
+                                   Margin="20,10,10,0" Height="36"/>
+
+                            <TextBlock Text="Create, Read, Update data of&#x0a;Orders, Workers and Departments entities"
+                                   Foreground="Black"
+                                   FontSize="18"
+                                   Margin="20,10,10,0"/>
+                        </StackPanel>
+                        <Image Width="385"
+                           Height="230"
+                           Source="/Images/bb.png"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Bottom" Margin="0,0,-98,-90" >
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-14.734"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Grid>
+                </Border>
+                <Border Width="200"
+                    Height="200"
+                    CornerRadius="10"
+                    Margin="45,0,0,0">
+
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="#FF61F961" Offset="0.0"/>
+                            <GradientStop Color="#FFEEEE2B" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <StackPanel>
+                            <TextBlock Text="Last order"
+                                   Foreground="Black"
+                                   FontSize="26"
+                                   Margin="10,10,10,0" Height="36"/>
+
+                            <TextBlock x:Name="txtLast" Text=""
+                                   Foreground="Black"
+                                   FontSize="17"
+                                   Margin="10,10,10,0" Height="68"/>
+                        </StackPanel>
+                        <Image Width="141"
+                           Height="71"
+                           Source="/Images/setts.png"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Bottom" Margin="0,0,-22,0">
+                            <Image.Effect>
+                                <DropShadowEffect Direction="330" Color="#FF848A91" ShadowDepth="7" BlurRadius="8"/>
+                            </Image.Effect>
+                        </Image>
+                    </Grid>
+                </Border>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="Margin" Value="15,0,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock Text="Entities"
+                   Foreground="White"
+                   FontSize="22"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,8"/>
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="149" 
+                        Height="140"
+                        CornerRadius="10"
+                        Margin="0">
+                        <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="#844eff" Offset="0.0"/>
+                            <GradientStop Color="#4e99ff" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                        <Grid xmlns:svgc="http://sharpvectors.codeplex.com/svgc">
+                            <StackPanel>
+                                <TextBlock Text="Order"
+                                   Foreground="Black"
+                                   FontSize="20"
+                                   Margin="10,10,10,0" Height="30"/>
+
+                                <TextBlock x:Name="txtOrderLenght"
+                                   Foreground="Black"
+                                   FontSize="20"
+                                   Margin="10,10,10,0"/>
+                            </StackPanel>
+                            <Image Width="44"
+                               Height="48"
+                               Source="/Images/order.png"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom" Margin="0,0,10,10">
+                                <Image.Effect>
+                                    <DropShadowEffect Direction="330" Color="#FF6D7176" ShadowDepth="7" BlurRadius="8"/>
+                                </Image.Effect>
+                            </Image>
+                        </Grid>
+                    </Border>
+                    <Border Width="149" 
+                        Height="140"
+                        CornerRadius="10">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#4e99ff" Offset="0.0"/>
+                                <GradientStop Color="#4eff91" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid>
+                            <StackPanel>
+                                <TextBlock Text="Worker"
+                                   Foreground="Black"
+                                   FontSize="20"
+                                   Margin="10,10,10,0" Height="30"/>
+
+                                <TextBlock x:Name="txtWorkerLenght" 
+                                   Foreground="Black"
+                                   FontSize="20"
+                                   Margin="10,10,10,0"/>
+                            </StackPanel>
+                            <Image Width="49"
+                           Height="51"
+                           Source="/Images/worker.png"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Bottom" Margin="0,0,10,10">
+                                <Image.Effect>
+                                    <DropShadowEffect Direction="330" Color="#FF6D7176" ShadowDepth="7" BlurRadius="8"/>
+                                </Image.Effect>
+                            </Image>
+                        </Grid>
+                    </Border>
+                    <Border Width="149" 
+                        Height="140"
+                        CornerRadius="10">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#4eff91" Offset="0.0"/>
+                                <GradientStop Color="#ecff4e" Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid>
+                            <StackPanel>
+                                <TextBlock Text="Department"
+                                   Foreground="Black"
+                                   FontSize="20"
+                                   Margin="10,10,10,0" Height="30"/>
+
+                                <TextBlock x:Name="txtDepartLenght"
+                                   Foreground="Black"
+                                   FontSize="20"
+                                   Margin="10,10,10,0"/>
+                            </StackPanel>
+                            <Image Width="53"
+                               Height="48"
+                               Source="/Images/department.png"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom" Margin="0,0,10,10">
+                                <Image.Effect>
+                                    <DropShadowEffect Direction="330" Color="#FF6D7176" ShadowDepth="7" BlurRadius="8"/>
+                                </Image.Effect>
+                            </Image>
+                        </Grid>
+                    </Border>
+                    <Border Width="149" 
+                        Height="140"
+                        CornerRadius="10">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#ecff4e" Offset="0.0"/>
+                                <GradientStop Color="#FFFF4E7E" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid>
+                            <StackPanel>
+                                <TextBlock Text="Tags"
+                                   Foreground="Black"
+                                   FontSize="20"
+                                   Margin="10,10,10,0" Height="29"/>
+
+                                <TextBlock Text="- Await&#x0a;- Perform&#x0a;- Done&#x0a;- Cancelled"
+                                   Foreground="Black"
+                                   FontSize="16"
+                                   Margin="10,10,37,0"/>
+                            </StackPanel>
+                            <Image Width="43"
+                               Height="45"
+                               Source="/Images/tag.png"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom" Margin="0,0,10,10">
+                                <Image.Effect>
+                                    <DropShadowEffect Direction="330" Color="#FF6D7176" ShadowDepth="7" BlurRadius="8"/>
+                                </Image.Effect>
+                            </Image>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

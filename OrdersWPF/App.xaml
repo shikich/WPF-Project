@@ -1,0 +1,56 @@
+﻿<Application x:Class="OrdersWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OrdersWPF"
+             xmlns:viewModel ="clr-namespace:OrdersWPF.ViewModel"
+             xmlns:view ="clr-namespace:OrdersWPF.View"
+             StartupUri="MainWindow.xaml">
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Style/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="/Style/TextboxTheme.xaml"/>
+                <ResourceDictionary Source="/Style/exitBtnTheme.xaml"/>
+                <ResourceDictionary Source="/Style/basicBtnTheme.xaml"/>
+                <ResourceDictionary Source="/Style/dataGridTheme.xaml"/>
+                <ResourceDictionary Source="/Style/borderTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--MainWindow-->
+            <DataTemplate DataType="{x:Type viewModel:ReadViewModel}">
+                <view:ReadView/>
+            </DataTemplate>
+            <!--Worker-->
+            <DataTemplate DataType="{x:Type viewModel:WorkerReadViewModel}">
+                <view:WorkerReadView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:WorkerCreateViewModel}">
+                <view:WorkerCreateView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:WorkerUpdateViewModel}">
+                <view:WorkerUpdateView/>
+            </DataTemplate>
+            <!--Order-->
+            <DataTemplate DataType="{x:Type viewModel:OrderReadViewModel}">
+                <view:OrderReadView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:OrderCreateViewModel}">
+                <view:OrderCreateView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:OrderUpdateViewModel}">
+                <view:OrderUpdateView/>
+            </DataTemplate>
+            <!--Departmnet-->
+            <DataTemplate DataType="{x:Type viewModel:DepartmentReadViewModel}">
+                <view:DepartmentReadView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:DepartmentCreateViewModel}">
+                <view:DepartmentCreateView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:DepartmentUpdateViewModel}">
+                <view:DepartmentUpdateView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
